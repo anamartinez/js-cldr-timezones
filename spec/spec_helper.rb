@@ -1,1 +1,1 @@
-require "js_cldr_timezones"
+require "js_cldr/timezones"
