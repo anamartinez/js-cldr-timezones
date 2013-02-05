@@ -5,8 +5,6 @@ require "js_cldr/timezones/version"
 module JsCldr
   module Timezones
     class << self
-      #TODO => options :locales, :all
-      #TODO- Check for target directory and created if it is not there
       def generate_timezones(options = {})
         template = cldr_timezones_template
         raise ArgumentError, "Template is empty" unless template
@@ -24,7 +22,7 @@ module JsCldr
         File.read(path)
       end
 
-      def create_javascript_file(template, locale)  
+      def create_javascript_file(template, locale)
         mustache_attributes = build_attributes_for_mustache(locale)
         javascript = generate_javascript(template, mustache_attributes)
         File.open(target_path + "/#{js_friendly_locale(locale)}_cldr_timezones.js", "w") {|target| target << javascript}

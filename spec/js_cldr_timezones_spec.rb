@@ -24,7 +24,7 @@ describe JsCldr::Timezones do
   #This verifies that the template wasn't modify by mistake
   describe ".cldr_timezones_template" do
     it "returns the template for timezones" do
-      JsCldr::Timezones.send(:cldr_timezones_template).should eq("{{locale}}_cldr_timezones_hash = {\n  {{# timezones}}\n    \"{{identifier}}\":\"{{translation}}\",\n  {{/ timezones}}\n};")
+      JsCldr::Timezones.send(:cldr_timezones_template).should eq("var {{locale}}_cldr_timezones_hash = {\n  {{# timezones}}\n    \"{{identifier}}\":\"{{translation}}\",\n  {{/ timezones}}\n};")
     end
   end
 
@@ -86,7 +86,7 @@ describe JsCldr::Timezones do
       mustache_attributes = {:locale => "test_of_locale", :timezones => {:identifier => "timezone_identifier", :translation => "timezone_translation"}}
 
       js = JsCldr::Timezones.send(:generate_javascript, template, mustache_attributes)
-      js.should eq("test_of_locale_cldr_timezones_hash = {\n    \"timezone_identifier\":\"timezone_translation\"\n};")
+      js.should eq("var test_of_locale_cldr_timezones_hash = {\n    \"timezone_identifier\":\"timezone_translation\"\n};")
     end
   end
 end

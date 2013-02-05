@@ -1,4 +1,4 @@
-{{locale}}_cldr_timezones_hash = {
+var {{locale}}_cldr_timezones_hash = {
   {{# timezones}}
     "{{identifier}}":"{{translation}}",
   {{/ timezones}}
