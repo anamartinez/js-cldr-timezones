@@ -3,7 +3,8 @@ name = "js-cldr-timezones"
 require "js_cldr/timezones/version"
 
 Gem::Specification.new name, JsCldr::Timezones::VERSION do |s|
-  s.summary = "Cached translations of timezones for js"
+  s.summary = "Translated timezones according to CLDR for ruby rails assets"
+  s.description = "Add translated timezones according to CLDR for your ruby rails assets"
   s.authors = ["Ana Martinez"]
   s.email = "acemacu@gmail.com"
   s.homepage = "http://github.com/anamartinez/#{name}"
