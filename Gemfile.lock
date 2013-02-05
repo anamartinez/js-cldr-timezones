@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    js-cldr-timezones (0.0.1)
+    js-cldr-timezones (0.0.2)
 
 GEM
   remote: http://rubygems.org/
